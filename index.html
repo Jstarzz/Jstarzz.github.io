@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josiah Davis — Developer Portfolio</title>
+<meta name="description" content="Portfolio of Josiah Davis — software developer working on machine learning, developer tooling and open source. Also, cats.">
+<meta name="theme-color" content="#0e0d15">
+<link rel="preconnect" href="https://api.thecatapi.com">
+<link rel="preconnect" href="https://cdn2.thecatapi.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top">
+    <span class="brand-mark">~/</span><span class="brand-name">josiah</span><span class="caret" aria-hidden="true"></span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#about">about</a>
+    <a href="#work">work</a>
+    <a href="#stack">stack</a>
+    <a href="#cats">cats</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ---------- hero ---------- -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Bahamas &middot; building things that ship</p>
+      <h1>Josiah&nbsp;Davis</h1>
+      <p class="tagline">
+        I write software that has to survive contact with the real world —
+        machine learning on satellite imagery, developer tooling, and open source
+        libraries other people actually depend on.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="https://github.com/Jstarzz" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Focus</dt><dd>ML &amp; tooling</dd></div>
+        <div><dt>Languages</dt><dd>Python, Go, TS</dd></div>
+        <div><dt>Cats deployed</dt><dd id="catCounter">0</dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero-cat">
+      <div class="cat-frame" id="heroCatFrame">
+        <img id="heroCat" alt="A randomly selected cat, fetched live from TheCatAPI" width="420" height="420">
+        <div class="cat-loading" id="heroCatLoading"><span class="spinner" aria-hidden="true"></span>summoning cat…</div>
+      </div>
+      <figcaption>
+        <button class="btn tiny" id="newHeroCat" type="button">↻ new cat</button>
+        <span class="muted">random, every reload</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ---------- about ---------- -->
+  <section id="about" class="panel">
+    <h2><span class="hash">#</span> about</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a developer from the Bahamas. Most of my time goes into problems where
+          the data is messy and the answer isn't in a tutorial — remote sensing,
+          model pipelines, and the unglamorous glue that turns a notebook into
+          something someone else can run.
+        </p>
+        <p>
+          My final-year project at CFBC became <strong>ASI (Aqua Satus Invenio)</strong>,
+          a machine learning approach for detecting floating sargassum in satellite
+          imagery. Sargassum wrecks Caribbean coastlines every year, and knowing where
+          it is before it lands is genuinely useful. I've also spent time interning as a
+          backend developer, building a streaming distribution service that fans a single
+          source out to multiple platforms at once.
+        </p>
+        <p>
+          Lately I've been building developer tooling — an MCP server for eBay search,
+          a homelab I maintain like production, and <strong>WindUI</strong>, an open
+          source UI library that other people build on top of.
+        </p>
+      </div>
+      <ul class="timeline">
+        <li><span class="dot"></span><strong>Now</strong><em>Developer tooling, MCP servers, AI engineering</em></li>
+        <li><span class="dot"></span><strong>Research</strong><em>ASI — sargassum detection from satellite imagery</em></li>
+        <li><span class="dot"></span><strong>Internship</strong><em>Backend dev — multi-platform streaming distribution</em></li>
+        <li><span class="dot"></span><strong>Open source</strong><em>WindUI — UI library used by other developers</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------- work ---------- -->
+  <section id="work" class="panel">
+    <h2><span class="hash">#</span> selected work</h2>
+    <p class="section-note">Every card gets a cat. I don't make the rules.</p>
+    <div class="grid" id="projectGrid"><!-- built by script.js --></div>
+  </section>
+
+  <!-- ---------- stack ---------- -->
+  <section id="stack" class="panel">
+    <h2><span class="hash">#</span> stack</h2>
+    <div class="stack-grid">
+      <div class="stack-col">
+        <h3>Languages</h3>
+        <ul class="tags"><li>Python</li><li>Go</li><li>TypeScript</li><li>JavaScript</li><li>C</li><li>Lua</li></ul>
+      </div>
+      <div class="stack-col">
+        <h3>ML &amp; data</h3>
+        <ul class="tags"><li>NumPy</li><li>scikit-learn</li><li>Rasterio</li><li>Satellite imagery</li><li>Feature engineering</li></ul>
+      </div>
+      <div class="stack-col">
+        <h3>Tooling &amp; infra</h3>
+        <ul class="tags"><li>Git</li><li>Docker</li><li>Linux</li><li>Self-hosting</li><li>MCP</li><li>REST APIs</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- cats ---------- -->
+  <section id="cats" class="panel">
+    <h2><span class="hash">#</span> the cat endpoint</h2>
+    <p class="section-note">
+      A live demo, not decoration. This grid calls
+      <a href="https://thecatapi.com" target="_blank" rel="noopener">TheCatAPI</a>
+      on every click, handles partial responses, and degrades gracefully when the
+      request fails. Open the console — it logs what it's doing.
+    </p>
+
+    <div class="cat-controls">
+      <button class="btn primary" id="loadCats" type="button">GET /images/search</button>
+      <span class="status" id="catStatus" role="status" aria-live="polite">idle</span>
+    </div>
+
+    <div class="cat-grid" id="catGrid"><!-- built by script.js --></div>
+  </section>
+
+  <!-- ---------- contact ---------- -->
+  <section id="contact" class="panel contact">
+    <h2><span class="hash">#</span> contact</h2>
+    <p>
+      Open to collaboration, open source contributions, and interesting problems.
+      The fastest way to reach me is email.
+    </p>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:josiahdavis321@gmail.com">josiahdavis321@gmail.com</a>
+      <a class="btn" href="https://github.com/Jstarzz" target="_blank" rel="noopener">github.com/Jstarzz</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Built by hand with HTML, CSS and vanilla JS — no framework, no build step.</p>
+  <p class="muted">Cats courtesy of <a href="https://thecatapi.com" target="_blank" rel="noopener">TheCatAPI</a>. Hosted on GitHub Pages.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
