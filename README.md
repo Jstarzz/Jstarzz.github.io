@@ -6,6 +6,8 @@ My personal developer portfolio — hosted on GitHub Pages at
 Plain HTML, CSS and vanilla JavaScript. No framework, no build step, no
 dependencies — clone it and open `index.html`.
 
+![Screenshot of the portfolio homepage](media/preview.png)
+
 ## Structure
 
 | File | Purpose |
