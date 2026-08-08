@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-   josiah.is-a.dev — vanilla JS, no dependencies
+   josiah.is-a.dev · vanilla JS, no dependencies
 
    Everything here is deliberately defensive: TheCatAPI is a free public
    endpoint with no key, so it can rate-limit, return fewer images than
@@ -92,7 +92,7 @@ async function loadHeroCat() {
     heroCatLoading.hidden = true;
   } catch (err) {
     log("hero cat failed:", err.message);
-    heroCatLoading.textContent = "cat unavailable — the API is napping";
+    heroCatLoading.textContent = "cat unavailable, the API is napping";
   } finally {
     newHeroCatBtn.disabled = false;
   }
@@ -107,7 +107,7 @@ const PROJECTS = [
     name: "ASI",
     lang: "Python",
     url: "https://github.com/Jstarzz/ASI",
-    desc: "Aqua Satus Invenio — a machine learning algorithm for remote detection of floating sargassum in satellite imagery. Built as my final-year research project."
+    desc: "Aqua Satus Invenio: a machine learning algorithm for remote detection of floating sargassum in satellite imagery. Built as my final-year research project."
   },
   {
     name: "ebay-search-mcp",
@@ -119,7 +119,7 @@ const PROJECTS = [
     name: "WindUI",
     lang: "Lua",
     url: "https://github.com/Jstarzz/WindUI",
-    desc: "An open source UI library for Roblox — themeable components and a clean API. Other developers build their interfaces on top of it."
+    desc: "An open source UI library for Roblox with themeable components and a clean API. Other developers build their interfaces on top of it."
   },
   {
     name: "ai-engineering-from-scratch",
@@ -131,7 +131,7 @@ const PROJECTS = [
     name: "homelab",
     lang: "Infra",
     url: "https://github.com/Jstarzz/homelab",
-    desc: "The configuration behind my self-hosted setup — services, networking and the automation that keeps it reproducible after a rebuild."
+    desc: "The configuration behind my self-hosted setup: services, networking and the automation that keeps it reproducible after a rebuild."
   },
   {
     name: "DataConsumer",
@@ -152,7 +152,7 @@ async function buildProjects() {
     <article class="card">
       <div class="card-thumb">
         <span class="card-lang">${p.lang}</span>
-        <img alt="" aria-hidden="true">
+        <img alt="" aria-hidden="true" width="640" height="360">
       </div>
       <div class="card-body">
         <h3><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></h3>
@@ -171,7 +171,7 @@ async function buildProjects() {
     });
   } catch (err) {
     log("project thumbnails unavailable:", err.message);
-    // Cards keep working with the plain background — nothing else to do.
+    // Cards keep working with the plain background; nothing else to do.
   }
 }
 
@@ -197,7 +197,7 @@ async function loadCatGrid() {
   // Skeleton tiles so the layout doesn't jump when images land.
   catGrid.innerHTML = Array.from(
     { length: CAT_GRID_SIZE },
-    () => `<div class="cat-tile skeleton"><img alt=""></div>`
+    () => `<div class="cat-tile skeleton"><img alt="" width="400" height="400"></div>`
   ).join("");
 
   const started = performance.now();
@@ -218,7 +218,7 @@ async function loadCatGrid() {
     setStatus(`200 OK · ${cats.length} cats · ${ms}ms`, "ok");
   } catch (err) {
     log("cat grid failed:", err.message);
-    catGrid.innerHTML = `<p class="cat-empty">The cat API didn't answer. It happens — try again in a moment.</p>`;
+    catGrid.innerHTML = `<p class="cat-empty">The cat API didn't answer. It happens, try again in a moment.</p>`;
     setStatus(`error: ${err.message}`, "error");
   } finally {
     loadCatsBtn.disabled = false;
