@@ -1,166 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Josiah Davis · Developer Portfolio</title>
-<meta name="description" content="Portfolio of Josiah Davis, a software developer working on machine learning, developer tooling and open source. Also, cats.">
-<meta name="theme-color" content="#0e0d15">
-<link rel="preconnect" href="https://api.thecatapi.com">
-<link rel="preconnect" href="https://cdn2.thecatapi.com">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈</text></svg>">
-<link rel="stylesheet" href="styles.css">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Josiah Davis">
+<meta name="description" content="Josiah Davis — AI systems, infrastructure, developer tooling, and selected engineering work from St. Kitts.">
+<link rel="canonical" href="https://josiah.runs-on.dev/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Josiah Davis — Projects">
+<meta property="og:description" content="AI systems, infrastructure, developer tooling, and selected engineering work.">
+<meta property="og:url" content="https://josiah.runs-on.dev/">
+<title>Josiah Davis | Projects</title>
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="nav" id="top">
-  <a class="brand" href="#top">
-    <span class="brand-mark">~/</span><span class="brand-name">josiah</span><span class="caret" aria-hidden="true"></span>
-  </a>
-  <nav aria-label="Primary">
-    <a href="#about">about</a>
-    <a href="#work">work</a>
-    <a href="#stack">stack</a>
-    <a href="#cats">cats</a>
-    <a href="#contact">contact</a>
-  </nav>
+<header>
+<h1>Josiah Davis</h1>
+<p>I build AI systems, scalable and "reliable" infrastructure, and developer tools. I like over-engineering stuff and I love contributing to open source! Year 2 student at "CFBC" St. Kitts.</p>
+<nav aria-label="Primary">
+<a href="#sargasso">Sargasso</a> ·
+<a href="#projects">Projects</a> ·
+<a href="#contributions">Contributions</a> ·
+<a href="https://github.com/Jstarzz">GitHub</a> ·
+<a href="https://itsjosiahdavis.dev">Main site (down cuz im lazy)</a>
+</nav>
 </header>
 
-<main id="main">
+<hr>
 
-  <!-- ---------- hero ---------- -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Josiah&nbsp;Davis</h1>
-      <p class="tagline">
-        Developer based in the Bahamas. I write software that has to survive
-        contact with the real world: machine learning on satellite imagery,
-        developer tooling, and open source libraries other people actually
-        depend on.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#work">See the work</a>
-        <a class="btn" href="https://github.com/Jstarzz" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <dl class="stats">
-        <div><dt>Focus</dt><dd>ML &amp; tooling</dd></div>
-        <div><dt>Languages</dt><dd>Python, Go, TS</dd></div>
-        <div><dt>Cats deployed</dt><dd id="catCounter">0</dd></div>
-      </dl>
-    </div>
+<main>
 
-    <figure class="hero-cat">
-      <div class="cat-frame" id="heroCatFrame">
-        <img id="heroCat" alt="A randomly selected cat, fetched live from TheCatAPI" width="420" height="420">
-        <div class="cat-loading" id="heroCatLoading"><span class="spinner" aria-hidden="true"></span>summoning cat…</div>
-      </div>
-      <figcaption>
-        <button class="btn tiny" id="newHeroCat" type="button">↻ new cat</button>
-        <span class="muted">random, every reload</span>
-      </figcaption>
-    </figure>
-  </section>
+<section id="sargasso">
+<h2>Sargasso</h2>
+<p><strong>Founder / creator · Active development</strong></p>
 
-  <!-- ---------- about ---------- -->
-  <section id="about" class="panel">
-    <h2><span class="hash">#</span> about</h2>
-    <div class="about-grid">
-      <div>
-        <p>
-          Most of my time goes into problems where the data is messy and the
-          answer isn't in a tutorial: remote sensing, model pipelines, and the
-          unglamorous glue that turns a notebook into something someone else
-          can run.
-        </p>
-        <p>
-          My final-year project at CFBC became <strong>ASI (Aqua Satus Invenio)</strong>,
-          a machine learning approach for detecting floating sargassum in satellite
-          imagery. Sargassum wrecks Caribbean coastlines every year, and knowing where
-          it is before it lands is genuinely useful. I've also spent time interning as a
-          backend developer, building a streaming distribution service that fans a single
-          source out to multiple platforms at once.
-        </p>
-        <p>
-          Lately I've been building developer tooling: an MCP server for eBay search,
-          a homelab I maintain like production, and <strong>WindUI</strong>, an open
-          source UI library that other people build on top of.
-        </p>
-      </div>
-      <ul class="timeline">
-        <li><span class="dot"></span><strong>Now</strong><em>Developer tooling, MCP servers, AI engineering</em></li>
-        <li><span class="dot"></span><strong>Research</strong><em>ASI, sargassum detection from satellite imagery</em></li>
-        <li><span class="dot"></span><strong>Internship</strong><em>Backend dev, multi-platform streaming distribution</em></li>
-        <li><span class="dot"></span><strong>Open source</strong><em>WindUI, UI library used by other developers</em></li>
-      </ul>
-    </div>
-  </section>
+<p>
+Sargasso is an AI-powered sargassum monitoring and forecasting project being
+developed in St. Kitts and Nevis. The current system combines satellite imagery
+with environmental and oceanographic data to estimate present-day conditions
+and produce a 48-hour coastal forecast. And to set the record this is not a shitty AI wrapper. 
+</p>
 
-  <!-- ---------- work ---------- -->
-  <section id="work" class="panel">
-    <h2><span class="hash">#</span> selected work</h2>
-    <p class="section-note">Every card gets a cat. I don't make the rules.</p>
-    <div class="grid" id="projectGrid"><!-- built by script.js --></div>
-  </section>
+<ul>
+<li>Satellite-based sargassum detection and segmentation.</li>
+<li>79,527 training samples and 17,149 validation samples processed.</li>
+<li>Operational end-to-end forecasting pipeline.</li>
+<li>48-hour forecasts across 18 coastal stretches around St. Kitts and Nevis.</li>
+<li>Environmental and oceanographic inputs integrated into the model stack.</li>
+<li>Next: deeper validation and research, low-cost coastal sensing hardware, then autonomous sensing and cleanup systems.</li>
+<li>Next: funding pls.</li>
+</ul>
 
-  <!-- ---------- stack ---------- -->
-  <section id="stack" class="panel">
-    <h2><span class="hash">#</span> stack</h2>
-    <div class="stack-grid">
-      <div class="stack-col">
-        <h3>Languages</h3>
-        <ul class="tags"><li>Python</li><li>Go</li><li>TypeScript</li><li>JavaScript</li><li>C</li><li>Lua</li></ul>
-      </div>
-      <div class="stack-col">
-        <h3>ML &amp; data</h3>
-        <ul class="tags"><li>NumPy</li><li>scikit-learn</li><li>Rasterio</li><li>Satellite imagery</li><li>Feature engineering</li></ul>
-      </div>
-      <div class="stack-col">
-        <h3>Tooling &amp; infra</h3>
-        <ul class="tags"><li>Git</li><li>Docker</li><li>Linux</li><li>Self-hosting</li><li>MCP</li><li>REST APIs</li></ul>
-      </div>
-    </div>
-  </section>
+<p><a href="https://sargasso.earth">sargasso.earth</a></p>
+</section>
 
-  <!-- ---------- cats ---------- -->
-  <section id="cats" class="panel">
-    <h2><span class="hash">#</span> the cat endpoint</h2>
-    <p class="section-note">
-      A live demo, not decoration. This grid calls
-      <a href="https://thecatapi.com" target="_blank" rel="noopener">TheCatAPI</a>
-      on every click, handles partial responses, and degrades gracefully when the
-      request fails. Open the console; it logs what it's doing.
-    </p>
+<hr>
 
-    <div class="cat-controls">
-      <button class="btn primary" id="loadCats" type="button">GET /images/search</button>
-      <span class="status" id="catStatus" role="status" aria-live="polite">idle</span>
-    </div>
+<section id="projects">
+<h2>Independent Projects</h2>
 
-    <div class="cat-grid" id="catGrid"><!-- built by script.js --></div>
-  </section>
+<article>
+<h3>Hardware Procurement MCP</h3>
+<p><strong>Type:</strong> MCP / product-search infrastructure · <a href="https://github.com/Jstarzz/ebay-search-mcp">Source</a></p>
+<p>
+A read-only Model Context Protocol server for product search across eBay,
+Amazon, AliExpress, and Best Buy. It applies deterministic request filtering,
+routes across official APIs, external providers, and a self-hosted scraper,
+then returns compact normalized results so the model does less browsing and
+carries less context.
+</p>
+</article>
 
-  <!-- ---------- contact ---------- -->
-  <section id="contact" class="panel contact">
-    <h2><span class="hash">#</span> contact</h2>
-    <p>
-      Open to collaboration, open source contributions, and interesting problems.
-      The fastest way to reach me is email.
-    </p>
-    <div class="contact-links">
-      <a class="btn primary" href="mailto:josiahdavis321@gmail.com">josiahdavis321@gmail.com</a>
-      <a class="btn" href="https://github.com/Jstarzz" target="_blank" rel="noopener">github.com/Jstarzz</a>
-    </div>
-  </section>
+<article>
+<h3>Slop Obliterator</h3>
+<p><strong>Type:</strong> AI developer tooling · <a href="https://github.com/Jstarzz/slop-obliterator">Source</a></p>
+<p>
+A Claude Code / Cowork plugin for stopping AI-generated UI ("slop" if you call it what it is), prose, and code
+from collapsing into the same defaults. It combines deterministic rendered
+audits with focused <code>/shape</code>, <code>/deslop</code>, and
+<code>/ship</code> workflows, while keeping heavier Figma and Playwright
+tooling opt-in.
+</p>
+</article>
+
+<article>
+<h3>SkillShop</h3>
+<p><strong>Type:</strong> AI developer tooling · <a href="https://github.com/Jstarzz/skillshop">Source</a></p>
+<p>
+A low-context engineering playbook marketplace for coding agents. The current
+library contains 157 specialist playbooks across 10 categories, but exposes
+only four plugin skills; an automatic router loads the smallest useful set of
+playbooks for the task instead of dumping the whole catalog into model context.
+</p>
+</article>
+
+<article>
+<h3>web-scraper</h3>
+<p><strong>Type:</strong> Distributed data infrastructure · <a href="https://github.com/Jstarzz/web-scraper">Source</a></p>
+<p>
+A self-hosted procurement scraper for Amazon, AliExpress, and eBay. It uses a
+Go API, PostgreSQL-backed distributed job queue, horizontally scalable workers,
+and an HTTP-first extraction path with Chromium fallback when required. Epic shit imo, holy overengineering. 
+</p>
+</article>
+
+<article>
+<h3>Take My Load</h3>
+<p><strong>Type:</strong> Distributed systems / performance testing · <a href="https://github.com/Jstarzz/take-my-load">Source</a></p>
+<p>
+The name is kind of self explanatory. This is ... a distributed load-generation and performance-testing platform in development,
+designed around a Go control plane and worker agent, a Rust high-throughput
+traffic engine, Kubernetes/k3s orchestration, and pluggable load engines for
+realistic user flows and raw throughput testing. 
+</p>
+</article>
+
+</section>
+
+<hr>
+
+<section id="contributions">
+<h2>Selected Contributions</h2>
+<p>Other stuff I contributed to or built with other people </p>
+
+<article>
+<h3>NDHIS AI</h3>
+<p><strong>Role:</strong> Developer / Systems engineer</p>
+<p>
+Built significant parts of the AI system used within NDHIS, including local
+and private model deployment, model serving, backend and infrastructure
+integration, and supporting services. This work was built for NDHIS and is not
+a personal product. I also manage the servers, and other services like geo-tagging and ambulance tracking.
+</p>
+</article>
+
+<article>
+<h3>ASPIRE</h3>
+<p><strong>Role:</strong> Backend contributor</p>
+<p>
+Contributed backend development to the ASPIRE platform. ASPIRE is not a
+personal project. CSO gold medalist with the team... yeah
+</p>
+</article>
+
+</section>
 
 </main>
 
+<hr>
+
 <footer>
-  <p>Built by hand with HTML, CSS and vanilla JS. No framework, no build step.</p>
-  <p class="muted">Cats courtesy of <a href="https://thecatapi.com" target="_blank" rel="noopener">TheCatAPI</a>. Hosted on GitHub Pages.</p>
+<p>
+<a href="https://github.com/Jstarzz/runs-on">Source for this page</a> ·
+Last updated: 2026-11-24
+</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
